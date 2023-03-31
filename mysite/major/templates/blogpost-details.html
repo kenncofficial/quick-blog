@@ -1,0 +1,99 @@
+﻿{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<section class="ftco-section" id="scroll">
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-md-9 heading-section mb-5" data-aos="fade-up" data-aos-duration="1000">
+<h2 class="mb-4">Our Blog</h2>
+<p><span class="subheading mr-2"><a href="{% url 'home' %}">Home</a></span> <span class="subheading mr-2"><a href="{% url 'bloglist' %}">Blog</a></span> <span class="subheading">Blog Single</span></p>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-9 blog-single">
+ <!-- <img src="{{ blogpost.image.url }}" alt="" class="img-fluid">-->
+<h2 class="mb-3">{{ blogpost.title }}</h2>
+<p>{{ blogpost.content1|safe }}</p>
+
+<p>{{ blogpost.content2|safe }}</p>
+<div class="tag-widget post-tag-container mb-5 mt-5">
+<div class="tagcloud">
+  {% for related_items in blogpost.tags.all %}
+  <a href="{% url 'tagged' related_items.slug %}" class="tag-cloud-link">{{ related_items|upper  }}</a>
+  {% endfor %}
+
+</div>
+</div>
+<div class="about-author d-flex p-4">
+<div class="bio img" style="background-image:url({{ blogpost.author.image.url }})">
+</div>
+<div class="desc">
+<h3>{{ blogpost.author.first_name }} {{ blogpost.author.last_name }}</h3>
+<p>{{ blogpost.author.bio }}</p>
+</div>
+</div>
+<div class="pt-5 mt-5">
+  {% if blogpost.comments.all %}
+<h3 class="mb-5 heading-two" style="font-size: 22px;">{{ blogpost.comments.all|length }} Comment{{ object.number_of_comments|pluralize }}</h3>
+
+<ul class="comment-list">
+  {% for BlogComment in blogpost.comments.all %}
+<li class="comment">
+<div class="vcard bio">
+<img src="https://cdn-icons-png.flaticon.com/128/747/747376.png" alt="Image placeholder">
+</div>
+<div class="comment-body">
+<h3>{{ BlogComment.author|title }}</h3>
+<div class="meta">{{ BlogComment.date_posted }} |  
+ {% if user.id == BlogComment.author.id %}
+<span>
+<a href="{% url 'Update_comment' BlogComment.pk %}" class="trigger-btn">(Edit)</a>
+<a href="{% url 'Delete_comment' BlogComment.pk %}" class="trigger-btn">(Delete)</a>
+</span>
+{% endif %}
+</div>
+
+<p>{{ BlogComment.content|safe }}</p>
+</div>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<strong class='text-secondary'>No comments yet</strong>
+{% endif %}
+
+{% if user.is_authenticated %} 
+<div class="comment-form-wrap pt-5">
+<h3 class="mb-5 heading-two" style="font-size: 22px;">Leave a comment</h3>
+<form method="Post" class="p-4 p-lg-5 comment-form">
+<div class="row">
+  {% csrf_token %}
+<div class="col-md-12">
+<div class="form-group">
+<label for="message"></label>
+{{ form_comment }}
+    
+{{ form.as_p }}
+</div>
+</div>
+<div class="col-md-12">
+<div class="form-group">
+<input type="submit" value="Post Comment" class="btn py-3 px-4 btn-darken">
+</div>
+</div>
+</div>
+</form>
+</div>
+{% else %}
+<br><br>
+<h3 class="mb-5 heading-two" style="font-size: 22px;"><a href="{% url 'login' %}?next={{request.path}}">Log in to add a comment!</a></h3>
+
+{% endif %}
+
+
+</div>
+</div> 
+</div>
+</div>
+</section>
+{% endblock %}

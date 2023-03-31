@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="col-md-3" style='padding:30px;'>
+	<div class="blog-entry justify-content-end" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+	
+	<div class="list-team d-flex align-items-center">
+	<div class="d-flex align-items-center">
+	
+	</div>
+	<div class="text-right ion">
+	
+	</div>
+	</div>
+	<div class="text">
+	<h3 class="heading mb-3">Do you really want to delete these records? This process cannot be undone.</h3>
+	<form method="post">
+		{% csrf_token %}
+		<input type="submit" value="Delete Comment" class="btn py-3 px-4 btn-darken">
+	</form>
+
+	</div>
+	</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+﻿{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<section class="ftco-section" id="scroll">
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-md-11 heading-section mb-5" data-aos="fade-up" data-aos-duration="1000">
+<h2 class="mb-4">Our Blog</h2>
+<p><span class="subheading mr-2"><a href="{% url 'home' %}">Home</a></span> <span class="subheading">Blog</span></p>
+</div>
+</div>
+<div class="row">
+
+    {% for BlogPost in object_list %}
+<div class="col-md-3">
+<div class="blog-entry justify-content-end" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+<a href="{% url 'BlogPost-details' BlogPost.slug %}" class="block-20 img" style="background-image:url({{ BlogPost.image.url }})">
+</a>
+<div class="list-team d-flex align-items-center">
+<div class="d-flex align-items-center">
+<div class="img" style="background-image:url({{ BlogPost.author.image.url }})"></div>
+<h3 class="ml-2 mb-0">{{ BlogPost.author|title }}</h3>
+</div>
+<div class="text-right ion">
+</div>
+</div>
+<div class="text">
+<p class="meta"><span>{{ BlogPost.date_posted }} </span><a href="#">{{ BlogPost.comments.all|length}} Comments</a></p>
+<h3 class="heading mb-3"><a href="{% url 'BlogPost-details' BlogPost.slug %}">{{ BlogPost.title|title }}</a mb-3=""></h3>
+<p>{{ BlogPost.snippet|title }}</p>
+</div>
+</div>
+</div>
+    {% endfor %}
+
+<div class="row mt-5">
+<div class="col text-center">
+<div class="block-27">
+<ul>
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+<li><a href="#">&lt;</a></li>
+{% endif %}
+   
+{% if page_obj.has_next %}
+<li><a href="#">&gt;</a></li>
+<a href="#!" class="next">&rarr;</a>
+{% endif %}     
+{% endif %}
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,324 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Kenncofficial - Kenneth Chinedu</title>
+<meta name="author" content="kenncofficial" />
+<meta name="title" content="Kenncofficial | Co-Founder of AjianLabs, Software developer, Enterpreur">
+<meta content="Kenneth Chinedu Innocent a.k.a  Kenncofficial is a Fullstack web Developer, Co-Founder of AjianLabs and Enterpreur from Nigeria. He is an Innovative and deadline-driven Web Developer with 2+ years of experience designing and developing user-friendly projects from initial concept to final. Building both simple and complex websites." name="description">
+  <meta content="KENNCOFFICIAL, kENNETH CHINEDU, Fullstack, Web Developer, Enterpreur, Co-Founder, Entertainer" name="keywords">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'major/stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'%}">
+<link rel="stylesheet" href="{% static 'major/cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css'%}">
+<link rel="stylesheet" href="{% static 'major/css/A.animate.css%20flaticon.css%20tiny-slider.css%20glightbox.min.css%20aos.css%20style.css%2cMcc.W1uBoTnV2t.css.pagespeed.cf.ZHcSg7Vwgd.css'%}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg  ftco-navbar-light">
+<div class="container-xl">
+<a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+<div class="icon-logo d-flex align-items-center justify-content-center"><span class="flaticon flaticon-layers"></span></div>
+<span class="">Kenncofficial</span>
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="fa fa-bars"></span> Menu
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+<li class="nav-item"><a class="nav-link" href="{% url 'work' %}">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'bloglist' %}">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+{% if user.is_authenticated %}
+<li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+{% else %}
+<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+{% endif %}
+
+</ul>
+</div>
+</div>
+</nav>
+{% block content %}
+<section class="ftco-section ftco-no-pb ftco-intro">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-10 col-10 col-xl-8">
+<div class="text" data-aos="fade-up" data-aos-duration="1000">
+<a href="#scroll" class="icon-scroll"><span class="ion ion-ios-arrow-round-down"></span></a>
+<h1 class="mb-5">I'm a Fullstack Developer from Nigeria, Enterpreur, NFT & Crypto Enthusiast, Entertainer</h1>
+<p class="mt-4"><a href="{% url 'bloglist' %}" class="btn-custom">I write about tech <span class="ion ion-ios-arrow-round-forward"></span></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid mt-4 mt-md-5">
+<div class="row justify-content-end">
+<div class="col-lg-6">
+<div class="row g-3">
+ <!-- {% for Portfolio_Post in Portfolio_Posts %}
+<div class="col-6 col-md-3" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
+<a href="{{ Portfolio_Post.image.url }}" class="work-featured img glightbox d-flex align-items-center justify-content-center" style="background-image:url({{ Portfolio_Post.image.url }})">
+<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-search"></span></div>
+</a>
+</div>
+{% endfor %}-->
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr>
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-9 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+<span class="subheading">Services /</span>
+<h2 class="mb-4">Skill Set</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-xl-9">
+<div class="row">
+<div class="col-md-6 col-lg-3 text-center d-flex align-items-stretch">
+<div class="services-wrap" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
+<div class="icon"><span class="flaticon-vector-art"></span></div>
+<div class="text">
+<h3>Project Management</h3>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 text-center d-flex align-items-stretch">
+<div class="services-wrap" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
+<div class="icon"><span class="flaticon-monitoring"></span></div>
+<div class="text">
+<h3>Web Design</h3>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 text-center d-flex align-items-stretch">
+<div class="services-wrap" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300">
+<div class="icon"><span class="flaticon-branding"></span></div>
+<div class="text">
+<h3>Writing</h3>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 text-center d-flex align-items-stretch">
+<div class="services-wrap" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400">
+<div class="icon"><span class="flaticon-web"></span></div>
+<div class="text">
+<h3>Web Development</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr>
+<section class="ftco-section" id="scroll">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-9 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+<span class="subheading">Portfolio</span>
+<h2 class="mb-4">Our Portfolio</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-xl-9">
+<div class="row">
+
+{% for Portfolio_Post in object_list %}
+<div class="col-md-6">
+<div class="work-wrap" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
+<div class="img" style="background-image:url({{ Portfolio_Post.image.url }})"></div>
+<div class="text">
+<span class="category">{{ Portfolio_Post.client }}</span>
+<h3><a href="#">{{ Portfolio_Post.name}}</a></h3>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<hr>
+<section class="ftco-section" id="scroll">
+ 
+  <section class="ftco-section ftco-about-section ftco-no-pb">
+    <div class="container-fluid">
+    <div class="row justify-content-center">
+    <div class="col-md-6 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="mb-4">About Me</h2>
+    <p><span class="subheading mr-2"><a href="index-2.html">Home</a></span> <span class="subheading">About Me</span></p>
+    </div>
+    </div>
+    <div class="row">
+    </div>
+    </div>
+    <div class="container-xl">
+    <div class="row justify-content-center">
+    <div class="col-md-10">
+    <div class="row g-xl-5">
+    <div class="col-md-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+    {% for About in Abouts %}
+    <div class="img w-100" style="background-image: url({{ About.image.url }});"></div>
+    </div>
+    <div class="col-md-7 py-5 heading-section" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+    <div class="py-md-5">
+    <span class="subheading">Hello...</span>
+    <h2 class="mb-4">{{ About.title }}</h2>
+    <p>{{ About.content1|safe }}</p>
+    {% endfor %}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+</section>
+<hr>
+<section class="ftco-section" id="scroll">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-9 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+<span class="subheading">Blog</span>
+<h2 class="mb-4">Recent Blog</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-xl-9">
+<div class="row">
+
+  {% for BlogPost in BlogPosts %}
+
+<div class="col-md-4">
+<div class="blog-entry justify-content-end" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+<a href="{% url 'BlogPost-details' BlogPost.slug %}" class="block-20 img" style="background-image:url({{ BlogPost.image.url }})">
+</a>
+<div class="list-team d-flex align-items-center">
+<div class="d-flex align-items-center">
+<div class="img" style="background-image:url({{ BlogPost.author.image.url }})"></div>
+<h3 class="ml-2 mb-0">{{ BlogPost.author|title }}</h3>
+</div>
+<div class="text-right ion">
+</div>
+</div>
+<div class="text">
+  <p class="meta"><span>{{ BlogPost.date_posted }} </span><a>{{ BlogPost.comments.all|length}} Comments</a></p>
+  <h3 class="heading mb-3"><a href="{% url 'BlogPost-details' BlogPost.slug %}">{{ BlogPost.title|title }}</a mb-3=""></h3>
+  <p>{{ BlogPost.snippet|title }}</p>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
+<hr>
+<footer class="ftco-footer">
+<div class="container-xl">
+<div class="row mb-5 pb-5 justify-content-between">
+<div class="col-md-6 col-lg">
+<div class="ftco-footer-widget mb-4">
+<h2 class="ftco-heading-2 logo d-flex">
+<a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+<div class="icon-logo d-flex align-items-center justify-content-center"><span class="flaticon flaticon-layers"></span></div>
+<span class="">Kenncofficial</span>
+</a>
+</h2>
+<p>Hello! My name is Kenneth Chinedu a.k.a Kenncofficial and I enjoy turning complex problems into simple and beautiful designs</p>
+<ul class="ftco-footer-social list-unstyled mt-2">
+<li><a href="https://twitter.com/Kennc_official?s=20&t=y0DQB-54d-fF3DVSm2HFvw"><span class="fa fa-twitter"></span></a></li>
+<li><a href="https://www.linkedin.com/in/kenneth-chinedu-b52266237/"><span class="fa fa-linkedin"></span></a></li>
+<li><a href="https://www.instagram.com/kenncofficial/?igshid=YmMyMTA2M2Y%3D"><span class="fa fa-instagram"></span></a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-6 col-lg-2">
+<div class="ftco-footer-widget mb-4">
+<h2 class="ftco-heading-2">Explore</h2>
+<ul class="list-unstyled">
+<li><a href="{% url 'about' %}"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
+<li><a href="{% url 'bloglist' %}"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
+<li><a href="{% url 'work' %}"><span class="fa fa-chevron-right mr-2"></span>Work</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-6 col-lg-2">
+<div class="ftco-footer-widget mb-4">
+<h2 class="ftco-heading-2">Quick Links</h2>
+<ul class="list-unstyled">
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Terms &amp; Conditions</a></li>
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy</a></li>
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Feedbacks</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-6 col-lg-2">
+<div class="ftco-footer-widget mb-4">
+<h2 class="ftco-heading-2">Categories</h2>
+<ul class="list-unstyled">
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Project Management</a></li>
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Web Design</a></li>
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Writing</a></li>
+<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Web Development</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<hr>
+<div class="container-fluid px-0 py-5 bg-darken">
+<div class="container-xl">
+<div class="row">
+<div class="col-md-12 text-center">
+<p class="mb-0" style="color: rgba(255,255,255,.5); font-size: 13px;">
+Copyright &copy;<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.html"></script><script>document.write(new Date().getFullYear());</script> All rights reserved <div style='visibility:hidden;'> <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank" rel="nofollow noopener">Colorlib</a></div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script src="{% static 'major/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'major/js/tiny-slider.js'%}"></script>
+<script src="{% static 'major/js/glightbox.min.js%20rellax.min.js%20aos.js%20google-map.js%20main.js.pagespeed.jc.aC1JTmZd_u.js'%}"></script><script>eval(mod_pagespeed_HLDosaJIS$);</script>
+<script>eval(mod_pagespeed_39UVDxhGdP);</script>
+<script>eval(mod_pagespeed_E5IYZiwZoq);</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
+<script>eval(mod_pagespeed_KVkzdC4lCV);</script>
+<script>eval(mod_pagespeed_ZiUqlhpZJT);</script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-23581568-13');
+    </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70a2d2cfed9c31b1","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

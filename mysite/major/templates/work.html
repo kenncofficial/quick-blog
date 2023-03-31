@@ -1,0 +1,49 @@
+﻿{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<section class="ftco-section" id="scroll">
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-md-11 heading-section mb-5" data-aos="fade-up" data-aos-duration="1000">
+<h2 class="mb-4">Our Portfolio</h2>
+<p><span class="subheading mr-2"><a href="index-2.html">Home</a></span> <span class="subheading">Portfolio</span></p>
+</div>
+</div>
+<div class="row">
+
+    {% for Portfolio_Post in object_list %}
+<div class="col-md-4">
+<div class="work-wrap" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
+<div class="img" style="background-image:url({{ Portfolio_Post.image.url }})"></div>
+<div class="text">
+<span class="category">{{ Portfolio_Post.client }}</span>
+<h3><a href="#">{{ Portfolio_Post.name}}</a></h3>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+
+<div class="row mt-5">
+<div class="col text-center">
+<div class="block-27">
+    <ul>
+        {% if is_paginated %}
+        {% if page_obj.has_previous %}
+    <li><a href="#">&lt;</a></li>
+    {% endif %}
+       
+    {% if page_obj.has_next %}
+    <li><a href="#">&gt;</a></li>
+    <a href="#!" class="next">&rarr;</a>
+    {% endif %}     
+    {% endif %}
+    </ul>
+    
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
